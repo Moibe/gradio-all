@@ -12,7 +12,7 @@ def sepia(input_img):
     print(input_img.shape, sepia_img.shape)
     return sepia_img
 
-demo = gr.Interface(sepia, gr.Image(shape=(200, 200)), "image")
+demo = gr.Interface(sepia, gr.Image(height=200, width=200), "image")
 
 demo.launch()
     

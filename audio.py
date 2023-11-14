@@ -1,16 +1,14 @@
 import gradio as gr
 
-def greet(name, is_morning, temperature):
-    salutation = "Good morning" if is_morning else "Good evening"
-    greeting = f"{salutation} {name}. It is {temperature} degrees today"
-    celsius = (temperature - 32) * 5/ 9
-    return greeting, round(celsius, 2)
+def speech_to_text(name):
+    # speech to text here...
+    return "This is the text"
 
-demo = gr.Interface(fn=greet, 
-                    inputs=["text", "checkbox", gr.Slider(1,100)], 
-                    outputs=["text", "number"])
+demo = gr.Interface(fn=speech_to_text,
+                    inputs=gr.Audio(label="Audio file"),
+                    outputs=gr.Text())
 
-demo.launch()
+demo.launch(debug=True)
     
 # if __name__ == "__main__":
 #     demo.launch(show_api=False)   
